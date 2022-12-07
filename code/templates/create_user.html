@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        This can be very helpful for the deaf and dumb people in communicating with others as knowing sign language is not something that is common to all, moreover, this can be extended to creating automatic editors, where the person can easily write by just their hand gestures.
+
+    </div>
+</header>
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <div class="login">
+                <h1>Créer votre compte</h1>
+                <form action="{{ url_for('create_user') }}" method="post">
+                    <label for="name">
+                        <i class="fas fa-user"></i>
+                    </label>
+                    <input type="text" name="name" placeholder="name" id="name" required>
+
+                    <label for="lastname">
+                        <i class="fas fa-user"></i>
+                    </label>
+                    <input type="text" name="lastname" placeholder="lastname" id="lastname" required>
+
+                    <label for="email">
+                        <i class="fas fa-user"></i>
+                    </label>
+                    <input type="text" name="email" placeholder="email" id="email" required>
+
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                    </label>
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <div class="msg">{{ msg }}</div>
+                    <input type="submit" value="Login">
+
+                    <select name="role">
+                        <option></option>
+                        {% for role in roles %}
+                        <option value="{{ role[0] }}">{{ role[1] }}</option>
+                        {% endfor %}
+                    </select>
+
+
+                </form>
+            </div>
+    </div>
+</section>
+
+{% endblock %}

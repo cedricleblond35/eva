@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% for role in roles %}
+{{ role[0] }} {{ role[1] }}<br>
+{% endfor %}
+{% endblock %}
